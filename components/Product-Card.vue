@@ -1,14 +1,25 @@
 <template>
     <div class="product-card">
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg p-3">
-            <nuxt-link :to="{name: 'product', params: {product: value.id}}" class="no-underline hover:no-underline">
-                <img :src="value.image" class="h-64 w-full rounded-t pb-6">
-                <!-- <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p> -->
-                <div class="w-full font-bold text-xl text-gray-900">{{ value.name }}</div>
-                
-            </nuxt-link>
-            <div class="ml-auto">
-                {{ value.price }}
+        <div class="flex items-center justify-center">
+            <div class="max-w-sm w-full sm:w-full lg:w-full py-6 px-3">
+                <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                    <nuxt-link :to="{name: 'product', params: {product: value.id}}" class="no-underline hover:no-underline">
+                        <img :src="value.image" class="w-full h-56 p-2"/>
+                    </nuxt-link>
+                        <div class="p-4">
+                            <nuxt-link :to="{name: 'product', params: {product: value.id}}" class="no-underline hover:no-underline">
+                                <p class="text-gray-900 transition-colors duration-200 hover:text-gray-800 font-bold">{{ value.name }}</p>
+                            </nuxt-link>
+                        </div>
+                    <div class="w-full text-sm flex p-4 border-t border-gray-300 text-gray-700">
+                        <p>
+                            price
+                            <div class="text-right ml-auto">
+                                {{ value.price }}
+                            </div>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -19,6 +30,6 @@ export default {
     name: "product-card",
     props: {
         value: Object
-    }
+    },
 }
 </script>
