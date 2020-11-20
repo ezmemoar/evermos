@@ -11,7 +11,7 @@
                         <p>
                             Price
                             <div class="text-right ml-auto">
-                                Rp. {{ product.price }}
+                                Rp. {{ product.price.human_format }}
                             </div>
                         </p>
                     </div>

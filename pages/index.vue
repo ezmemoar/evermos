@@ -2,7 +2,7 @@
   <div class="w-full mx-auto">
     <navbar/>
     <div class="w-3/4 mx-auto mt-10">
-      <div class="grid grid-cols-4 gap-1">
+      <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-1">
         <template v-for="product in products">
           <product-card :key="product.id" :value="product"/>
         </template>
